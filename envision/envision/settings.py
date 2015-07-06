@@ -37,6 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
+    'django_extensions',
+    'bootstrap3',
+    'envision',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -75,10 +79,18 @@ WSGI_APPLICATION = 'envision.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'envision',
+        'USER': 'tripp',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '8000',
+}
 }
 
 

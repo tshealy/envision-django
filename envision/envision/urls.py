@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url('^', include('django.contrib.auth.urls')),
+    # url('^register/', CreateView.as_view(
+    #         template_name='bookmark/register.html',
+    #         form_class=UserCreationForm,
+    #         success_url='/index/'), name= "user_register"),
 ]
+
