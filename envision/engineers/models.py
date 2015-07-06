@@ -17,7 +17,7 @@ class Engineer(models.Model):
 
     version = models.CharField(choices=version)
 
-    score = models.OneToOneField(Rating)
+    rating = models.OneToOneField(Rating)
 
 class Rating(models.Model):
 
