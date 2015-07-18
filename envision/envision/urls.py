@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^index/$', TemplateView.as_view(template_name="index.html")),
     url(r'^name/$',engineer_views.EngineerCreate.as_view(), name='engineer_add'),
     url(r'^ratings/$',engineer_views.RatingCreate.as_view(), name='rating_add'),
+    # url(r'^ratings/(?P<engineer_id>\d+)$',engineer_views.RatingCreate.as_view(), name='rating_add'),
     #url(r'^index/', CreateView.as_view()),
     # url('^', CreateView.as_view(template_name='engineer'))
     # url('^register/', CreateView.as_view(

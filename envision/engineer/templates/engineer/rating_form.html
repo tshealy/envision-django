@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load bootstrap3 %}
+<link rel = "stylesheet" type="text/css" href="{%  static "styles.css" %}">
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Rating Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#    <link href = "./envision/static/css/bootstrap.min.css" rel = "stylesheet">#}
+</head>
+
+<body>
+<div class = "navbar navbar-default navbar-static-top">
+    <div class = "container">
+        <div class = "navbar-brand">Quality of Life</div>
+    </div>
+</div>
+
+<form method="post" action="{% url 'rating_add' %}">
+    {% csrf_token %}
+
+    <table class = "table">
+        <thead>
+        <tr>
+            <th>Credit</th>
+            <th>Credit Intent<br>and Metric</th>
+            <th>Is this Required<br>for the Project?</th>
+            <th>Level of<br>Achievement</th>
+            <th>Score</th>
+            <th>Possible<br>Points</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Credit</td>
+            <td>Credit Intent<br>and Metric</td>
+            <td>{{ form.QL1_1_inc }}</td>
+            <td>{{ form.QL1_1_loa }}</td>
+            <td>Score</td>
+            <td>Possible<br>Points</td>
+        </tr>
+
+        {{ form.QL1_1_exp }}
+
+
+
+        </tbody>
+    </table>
+    <input type=hidden" name="engineer_id" value="1">
+    <input type="submit" value="Submit" />
+</form>
+
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-2 box">
+          <h3>Credit</h3>
+        </div>
+
+
+{#<h1>Envision: Rating System</h1>#}
+
+{##}
+{# <form method="post" action="{% url 'rating_add' %}">#}
+{#    <table class="table table-bordered">#}
+{#            <div class = "row">#}
+{#                <div class = "col-md-4">#}
+{#                    <label for="id_QL1_1_inc">Included:</label>#}
+{#                    {{ form.QL1_1_inc }}#}
+{#                </div>#}
+{#                <div class = "col-md-">#}
+{#                    <p>Improve community quality of life. Improve the net quality of life of all communities affected by the project and mitigate negative impacts to communities</p>#}
+{#                </div>#}
+{#                <label for="id_QL1_1_loa">Level of Achievement:</label>#}
+{#        {{ form.QL1_1_loa }}#}
+{#     </table>#}
+{#     <div>#}
+{#         <label for="id_QL1_1_exp">Explanation:</label>#}
+{#        {{ form.QL1_1_exp }}#}
+{#     </div>#}
+{#     <table class="table table-bordered">#}
+{#        <label for="id_QL1_2_inc">Included:</label>#}
+{#        {{ form.QL1_2_inc }}#}
+{#        <label for="id_QL1_2_loa">Level of Achievement:</label>#}
+{#        {{ form.QL1_2_loa }}#}
+{#     </table>#}
+{#     <div>#}
+{#         <label for="id_QL1_2_exp">Explanation:</label>#}
+{#        {{ form.QL1_2_exp }}#}
+{#     </div>#}
+{#    <div class="fieldWrapper">#}
+{#        {{ form.message.errors }}#}
+{#        <label for="id_message">Your message:</label>#}
+{#        {{ form.message }}#}
+{#    </div>#}
+{#    <div class="fieldWrapper">#}
+{#        {{ form.sender.errors }}#}
+{#        <label for="id_sender">Your email address:</label>#}
+{#        {{ form.sender }}#}
+{#    </div>#}
+{#    <div class="fieldWrapper">#}
+{#        {{ form.cc_myself.errors }}#}
+{#        <label for="id_cc_myself">CC yourself?</label>#}
+{#        {{ form.cc_myself }}#}
+{#    </div>#}
+
+{#        <p><input type="submit" value="Submit" /></p>#}
+{#    </form>#}
+{#</table>#}
+{#    <textarea class="form-control" rows="3">#}
+{#        {{ form.QL1_1_epx }}#}
+{#    </textarea>#}
+</body>
+</html>

@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models import Engineer, Project, Rating
+from .models import Engineer, Rating
 
 
 class EngineerAdmin(admin.ModelAdmin):
     list_display = ['name', 'version']
 
-
-class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title']
+#
+# class ProjectAdmin(admin.ModelAdmin):
+#     list_display = ['title']
 
 
 class RatingAdmin(admin.ModelAdmin):
@@ -16,5 +16,5 @@ class RatingAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Engineer, EngineerAdmin)
-admin.site.register(Project, ProjectAdmin)
+# admin.site.register(Project, ProjectAdmin)
 admin.site.register(Rating, RatingAdmin)

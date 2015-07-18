@@ -10,32 +10,23 @@ from django.utils import timezone
 
 class Engineer(models.Model):
 
-    # user = models.OneToOneField(User)
-
     name = models.CharField(max_length=255)
 
-    version = (
-        (1, "A"),
-        (2, "B"),
-    )
+    version = models.IntegerField()
 
-    version = models.CharField(choices=version, max_length=20)
+    total_time = models.IntegerField(default=0)
 
-
-class Project(models.Model):
-
-    title = models.CharField(max_length=255, default='Cordova, AL')
-
-    engineer = models.ForeignKey(Engineer)
+#
+# class Project(models.Model):
+#
+#     title = models.CharField(max_length=255, default='Cordova, AL')
+#
+#     engineer = models.ForeignKey(Engineer)
 
 
 class Rating(models.Model):
 
-    project = models.ForeignKey(Project)
-
-    start_time = models.DateTimeField(null=True, default=timezone.now)
-
-    finish_time = models.DateTimeField(null=True, default=timezone.now)
+    engineer = models.ForeignKey(Engineer)
 
     include = (
         (0, "Include"),
