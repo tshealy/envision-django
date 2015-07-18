@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{#This is from previous version#}
+{#<html>#}
+{#<head>#}
+{#	<title>Envision: Rating System</title>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#	<link href="../../envision/static/css/main.css" media="screen, projection" rel="stylesheet" type="text/css"/>#}
+{#	<link href="../../envision/static/css/quality.css" media="screen, projection" rel="stylesheet" type="text/css"/>#}
+{##}
+{#</head>#}
+{#<body>#}
+{##}
+{#	<header>#}
+{#		<a href="../index.html"><h1>Envision Rating System</h1></a>#}
+{#	</header>#}
+{##}
+{#	<div class="wrapper">#}
+{##}
+{#		<div class="score">#}
+{##}
+{#			<span class="margin-right">Your Score: <span id="actual-score"></span></span>#}
+{#			<span>Max Score: <span id="max-score"></span></span>#}
+{##}
+{#		</div>#}
+{##}
+{#		<table>#}
+{#			<tbody>#}
+{#				<tr class="category-titles">#}
+{#					<td class="thinnest table-cell">Credit</td>#}
+{#					<td class="wide table-cell">Credit Intent<br>and Metric</td>#}
+{#					<td class="medium table-cell">Is this Required<br>for the Project?</td>#}
+{#					<td class="wide table-cell">Level of<br>Achievement</td>#}
+{#					<td class="thinnest table-cell">Score</td>#}
+{#					<td class="thin table-cell">Possible<br>Points</td>#}
+{#				</tr>#}
+{##}
+{#				<tr>#}
+{#					<td colspan="6" class="main-heading">Quality of Life</td>#}
+{#				</tr>#}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Rating Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "../../envision/static/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "../../envision/static/css/styles.css" rel = "stylesheet">
+</head>
+{#<body>#}
+{#    <div class = "navbar navbar-default navbar-static-top">#}
+{#          <div class = "container">#}
+{#            <div class = "navbar-brand">Quality of Life</div>#}
+{#          </div>#}
+{#    </div>#}
+
+{#    <form method="post" action="{% url 'rating_add' %}">#}
+{#        {% csrf_token %}#}
+{#        {{ form.QL1_1_inc }}#}
+{#        {{ form.QL1_1_epx }}#}
+{#        <input type="submit" value="Submit" />#}
+{#    </form>#}
+<h1>Envision: Rating System</h1>
+<table>
+    <tbody>
+        <tr class="table">
+            <td>Credit</td>
+            <td>Credit Intent<br>and Metric</td>
+            <td>Is this Required<br>for the Project?</td>
+            <td>Level of<br>Achievement</td>
+            <td>Score</td>
+            <td>Possible<br>Points</td>
+        </tr>
+        </tbody>
+    </table>
+
+ <form method="post" action="{% url 'rating_add' %}">
+    <table class="table table-bordered">
+            <div class = "row">
+                <div class = "col-md-4">
+                    <label for="id_QL1_1_inc">Included:</label>
+                    {{ form.QL1_1_inc }}
+                </div>
+                <div class = "col-md-">
+                    <p>Improve community quality of life. Improve the net quality of life of all communities affected by the project and mitigate negative impacts to communities</p>
+                </div>
+                <label for="id_QL1_1_loa">Level of Achievement:</label>
+        {{ form.QL1_1_loa }}
+     </table>
+     <div>
+         <label for="id_QL1_1_exp">Explanation:</label>
+        {{ form.QL1_1_exp }}
+     </div>
+     <table class="table table-bordered">
+        <label for="id_QL1_2_inc">Included:</label>
+        {{ form.QL1_2_inc }}
+        <label for="id_QL1_2_loa">Level of Achievement:</label>
+        {{ form.QL1_2_loa }}
+     </table>
+     <div>
+         <label for="id_QL1_2_exp">Explanation:</label>
+        {{ form.QL1_2_exp }}
+     </div>
+{#    <div class="fieldWrapper">#}
+{#        {{ form.message.errors }}#}
+{#        <label for="id_message">Your message:</label>#}
+{#        {{ form.message }}#}
+{#    </div>#}
+{#    <div class="fieldWrapper">#}
+{#        {{ form.sender.errors }}#}
+{#        <label for="id_sender">Your email address:</label>#}
+{#        {{ form.sender }}#}
+{#    </div>#}
+{#    <div class="fieldWrapper">#}
+{#        {{ form.cc_myself.errors }}#}
+{#        <label for="id_cc_myself">CC yourself?</label>#}
+{#        {{ form.cc_myself }}#}
+{#    </div>#}
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</table>
+{#    <textarea class="form-control" rows="3">#}
+{#        {{ form.QL1_1_epx }}#}
+{#    </textarea>#}
+</body>
+</html>

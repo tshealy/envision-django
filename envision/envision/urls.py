@@ -19,14 +19,20 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
+from engineer import views as engineer_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url('^', include('django.contrib.auth.urls')),
+    url(r'^index/$', TemplateView.as_view(template_name="index.html")),
+    url(r'^name/$',engineer_views.EngineerCreate.as_view(), name='engineer_add'),
+    url(r'^ratings/$',engineer_views.RatingCreate.as_view(), name='rating_add'),
+    #url(r'^index/', CreateView.as_view()),
+    # url('^', CreateView.as_view(template_name='engineer'))
     # url('^register/', CreateView.as_view(
     #         template_name='engineer/register.html',
     #         form_class=UserCreationForm,
     #         success_url='/index/'), name= "user_register"),
-    # url(r'^$', TemplateView.as_view(template_name="engineers/index.html"), name='view_index'),
+    # url(r'^$', TemplateView.as_view(template_name="engineer/index.html"), name='view_index'),
 ]
 

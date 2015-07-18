@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(serialize=False, verbose_name='ID', auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=255, default='Cordova, AL')),
-                ('engineer', models.ForeignKey(to='engineers.Engineer')),
+                ('engineer', models.ForeignKey(to='engineer.Engineer')),
             ],
         ),
         migrations.CreateModel(
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
                 ('QL3_3_inc', models.IntegerField(choices=[(0, 'Include'), (1, 'Exclude')], default=0)),
                 ('QL3_3_loa', models.IntegerField(choices=[(0, 'No Added Value'), (1, 'Improved'), (3, 'Enhanced'), (6, 'Superior'), (11, 'Conserving'), (13, 'Restorative')], default=0)),
                 ('QL3_3_exp', models.CharField(null=True, max_length=500, blank=True)),
-                ('project', models.ForeignKey(to='engineers.Project')),
+                ('project', models.ForeignKey(to='engineer.Project')),
             ],
         ),
     ]

@@ -6,7 +6,7 @@ from .models import Engineer, Project, Rating
 
 class EngineerForm(forms.ModelForm):
     name = forms.CharField()
-    version =forms.CharField()
+    version = forms.CharField()
 
     class Meta:
         model = Engineer
