@@ -24,16 +24,11 @@ from engineer import views as engineer_views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url('^', include('django.contrib.auth.urls')),
-    url(r'^index/$', TemplateView.as_view(template_name="index.html")),
+    url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
+    url(r'^rating/(?P<pk>\d+)$', engineer_views.display_engineer, name="engineer_detail"),
     url(r'^name/$',engineer_views.EngineerCreate.as_view(), name='engineer_add'),
-    url(r'^ratings/$',engineer_views.RatingCreate.as_view(), name='rating_add'),
+    url(r'^ratings/',engineer_views.RatingCreate.as_view(), name='rating_add'),
+
     # url(r'^ratings/(?P<engineer_id>\d+)$',engineer_views.RatingCreate.as_view(), name='rating_add'),
-    #url(r'^index/', CreateView.as_view()),
-    # url('^', CreateView.as_view(template_name='engineer'))
-    # url('^register/', CreateView.as_view(
-    #         template_name='engineer/register.html',
-    #         form_class=UserCreationForm,
-    #         success_url='/index/'), name= "user_register"),
-    # url(r'^$', TemplateView.as_view(template_name="engineer/index.html"), name='view_index'),
 ]
 

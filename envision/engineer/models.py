@@ -16,13 +16,6 @@ class Engineer(models.Model):
 
     total_time = models.IntegerField(default=0)
 
-#
-# class Project(models.Model):
-#
-#     title = models.CharField(max_length=255, default='Cordova, AL')
-#
-#     engineer = models.ForeignKey(Engineer)
-
 
 class Rating(models.Model):
 

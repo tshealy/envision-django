@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <form method="post" action="{% url 'rating_add' %}">
+    <form method="POST" action="{% url 'engineer_detail' engineer.pk %}">
         {% csrf_token %}
 
     <div class = "container">
@@ -69,32 +69,47 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-1">
-                <h4>QL1.1</h4>
+            <div class="col-md-10 box-ql">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <h4>QL1.1</h4>
+                        </div>
+                        <div class="col-md-3 textbox">
+                            <p><b>Improve Community Quality of Life</b><br>
+                                Improve the net quality of life of all communities affected by the project and mitigate negative
+                                impacts to communities.<br></p>
+                        </div>
+                        <div class="col-md-2">
+                            <h4>{{ rating_form.QL1_1_inc }}</h4>
+                            {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
+                            <p># Word count</p>
+                        </div>
+                        <div class="col-md-2">
+                            <h4>{{ rating_form.QL1_1_loa }} </h4>
+                        </div>
+                        <div class="col-md-1 box-yellow">
+                            <h4>##</h4>
+                        </div>
+                        <div class="col-md-1 box-white">
+                            <h4>##</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3 textbox">
-                <p><b>Improve Community Quality of Life</b><br>
-                    Improve the net quality of life of all communities affected by the project and mitigate negative
-                    impacts to communities.<br></p>
-            </div>
-            <div class="col-md-2">
-                <h4>{{ form.QL1_1_inc }}</h4>
-                {{ form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
-                <p># Word count</p>
-            </div>
-            <div class="col-md-2">
-                <h4>{{ form.QL1_1_loa }} </h4>
-            </div>
-            <div class="col-md-1 box-yellow">
-                <h4>##</h4>
-            </div>
-            <div class="col-md-1 box-white">
-                <h4>##</h4>
-            </div>
-        </div></div>
-    <div align= "center"><br>
-        <input type="submit" value="Submit" style="width: 100px; height: 40px; font-size: 20px;"/>
+        </div>
     </div>
+
+    <div align= "center"><br>
+        <input type="submit" value="submit" style="width: 100px; height: 40px; font-size: 20px;"/>
+    </div>
+</form>
+<form method="POST" action="{% url 'engineer_detail' engineer.pk %}">
+    {% csrf_token %}
+    {{ rating_form.as_p }}
+
+    <!-- Provide a button to click to submit the form. -->
+    <input type="submit" name="submit" value="Register"/>
 </form>
 </body>
 </html>
