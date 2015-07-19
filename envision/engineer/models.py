@@ -44,7 +44,7 @@ class Rating(models.Model):
 
     QL1_1_inc = models.IntegerField(choices=include, default=0)
     QL1_1_loa = models.IntegerField(choices=loa_1_1, default=0)
-    QL1_1_exp = models.CharField(max_length=500, null=True, blank=True)
+    QL1_1_exp = models.TextField(max_length=1000, null=True, blank=True)
 
     loa_1_2 = (
             (0, "No Added Value"),

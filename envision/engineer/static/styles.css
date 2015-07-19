@@ -1,5 +1,32 @@
 .box {
-    color: green;
+    border-radius: 3px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
 }
+.box-ql {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(229, 103, 23, 0.8);
+}
+.box-white {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(229, 103, 23, 0.8);
+    background-color: snow;
+}
+.box-yellow {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(229, 103, 23, 0.8);
+    background-color: yellow;
+}
+.quality {
+    background-color: rgba(229, 103, 23, 0.8);
+    border-radius: 3px;
+}
+
+
+
