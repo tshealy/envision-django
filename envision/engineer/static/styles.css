@@ -2,6 +2,7 @@
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
+    text-align: center;
 }
 .box-ql {
     border-radius: 3px;
@@ -9,12 +10,22 @@
     border-width: 1px;
     border-color: rgba(229, 103, 23, 0.8);
 }
+.textbox {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(229, 103, 23, 0.8);
+    background-color: snow;
+    padding-top: 5px;
+    padding-top: 10px;
+}
 .box-white {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(229, 103, 23, 0.8);
     background-color: snow;
+    text-align: center;
 }
 .box-yellow {
     border-radius: 3px;
@@ -22,11 +33,18 @@
     border-width: 1px;
     border-color: rgba(229, 103, 23, 0.8);
     background-color: yellow;
+    text-align: center;
 }
 .quality {
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
 }
+.submit-btn {
 
+}
+
+#id_QL1_1_exp{
+    color: red;
+}
 
 

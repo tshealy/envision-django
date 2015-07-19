@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'engineer',
     'jquery',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -22,4 +22,7 @@ class RatingForm(forms.ModelForm):
 
     class Meta:
         model = Rating
+        widgets = {
+          'QL_1_1_exp': forms.Textarea(attrs={'rows':2, 'cols':1}),
+        }
 

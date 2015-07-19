@@ -8,10 +8,16 @@
 
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
+{% load widget_tweaks %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel = "stylesheet" type="text/css" href="{%  static "styles.css" %}">
 
+<div class = "navbar navbar-default navbar-static-top">
+    <div class = "container">
+        <h1 class = "navbar-brand">Envision Rating System</h1>
+    </div>
+</div>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -20,108 +26,75 @@
 </head>
 
 <body>
-<div class = "navbar navbar-default navbar-static-top">
+    <form method="post" action="{% url 'rating_add' %}">
+        {% csrf_token %}
+
     <div class = "container">
-        <div class = "navbar-brand">Quality of Life</div>
+        <div class = "row">
+            <div class = "col-md-1 box">
+                <h4>Credit</h4><br>
+            </div>
+            <div class = "col-md-3 box">
+                <h4>Intent and Metric</h4><br>
+            </div>
+            <div class = "col-md-2 box">
+                <h4>Required?</h4><br>
+            </div>
+            <div class = "col-md-2 box">
+                <h4>Level of Achievement</h4>
+            </div>
+            <div class = "col-md-1 box">
+                <h4>Score</h4><br>
+            </div>
+            <div class = "col-md-1 box">
+                <h4>Points Possible</h4>
+            </div>
+        </div>
     </div>
-</div>
 
-<form method="post" action="{% url 'rating_add' %}">
-    {% csrf_token %}
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-10 box-ql">
+                <h3>Quality of Life</h3>
+            </div>
+        </div>
+    </div>
 
-    <table class = "table">
-        <thead>
-        <tr>
-            <th>Credit</th>
-            <th>Credit Intent<br>and Metric</th>
-            <th>Is this Required<br>for the Project?</th>
-            <th>Level of<br>Achievement</th>
-            <th>Score</th>
-            <th>Possible<br>Points</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-            <td>Credit</td>
-            <td>Credit Intent<br>and Metric</td>
-            <td>{{ form.QL1_1_inc }}</td>
-            <td>{{ form.QL1_1_loa }}</td>
-            <td>Score</td>
-            <td>Possible<br>Points</td>
-        </tr>
-
-        {{ form.QL1_1_exp }}
-
-
-
-        </tbody>
-    </table>
-    <input type=hidden" name="engineer_id" value="1">
-    <input type="submit" value="Submit" />
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-10 box-ql">
+            <p><b>Example Project: This row only shows on version 2</b></p>
+            </div>
+        </div>
+    </div>
+    <div class = "container quality">
+        <div class = "row">
+            <div class = "col-md-1">
+                <h4>QL1.1</h4>
+            </div>
+            <div class = "col-md-3 textbox">
+                <p><b>Improve Community Quality of Life</b><br>
+                Improve the net quality of life of all communities affected by the project and mitigate negative impacts to communities.<br></p>
+            </div>
+            <div class = "col-md-2">
+                <h4>{{ form.QL1_1_inc }}</h4>
+                {{ form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
+                <p># Word count</p>
+            </div>
+            <div class = "col-md-2">
+                <h4>{{ form.QL1_1_loa }} </h4>
+            </div>
+            <div class = "col-md-1 box-yellow">
+                <h4>##</h4>
+            </div>
+            <div class = "col-md-1 box-white">
+                <h4>##</h4>
+            </div>
+        </div>
+    </div>
+        <div align= ""><br>
+            <input type="submit" value="Submit" style="width: 100px; height: 40px; font-size: 20px;"/>
+        </div>
 </form>
-
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-1 box">
-            <h4>Credit</h4><br>
-        </div>
-        <div class = "col-md-3 box">
-            <h4>Intent and Metric</h4><br>
-        </div>
-        <div class = "col-md-2 box">
-            <h4>Required?</h4><br>
-        </div>
-        <div class = "col-md-2 box">
-            <h4>Level of Achievement </h4>
-        </div>
-        <div class = "col-md-1 box">
-            <h4>Score</h4><br>
-        </div>
-        <div class = "col-md-1 box">
-            <h4>Points Possible</h4>
-        </div>
-    </div>
-</div>
-
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-10 box-ql">
-            <h3>Quality of Life</h3>
-        </div>
-    </div>
-</div>
-
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-10 box-ql">
-        <p><b>Example Project: This row only shows on version 2</b></p>
-        </div>
-    </div>
-</div>
-<div class = "container quality ">
-    <div class = "row">
-        <div class = "col-md-1 ">
-            <h4>QL1.1</h4>
-        </div>
-        <div class = "col-md-3 box-white">
-            <p><b>Improve Community Quality of Life</b></b><br>
-            Improve the net quality of life of all communities affected by the project and mitigate negative impacts to communities.</p>
-        </div>
-        <div class = "col-md-2">
-            <h4>{{ form.QL1_1_inc }}</h4>
-            {{ form.QL1_1_exp }}
-        </div>
-        <div class = "col-md-2">
-            <h4>{{ form.QL1_1_loa }} </h4>
-        </div>
-        <div class = "col-md-1 box-yellow">
-            <h4>##</h4>
-        </div>
-        <div class = "col-md-1 box-white">
-            <h4>##</h4>
-        </div>
-    </div>
-</div>
 </body>
 </html>
