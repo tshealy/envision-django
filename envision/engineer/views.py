@@ -28,9 +28,7 @@ def pick_version(request, pk):
     else:
         engineer.version = 1
     engineer.save()
-    return redirect("engineer_detail", kwargs={
-            'pk':pk,
-        })
+    return redirect("engineer_detail", pk)
 
 
 def display_engineer(request, pk):

@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url('^', include('django.contrib.auth.urls')),
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
-    url(r'^rating/(?P<pk>\d+)$', engineer_views.display_engineer, name="engineer_detail"),
+    url(r'^rating/(?P<pk>\d+)/$', engineer_views.display_engineer, name="engineer_detail"),
     url(r'^name/$',engineer_views.EngineerCreate.as_view(), name='engineer_add'),
-    url(r'^version/(?P<pk>\d+)$', engineer_views.pick_version, name="pick_version"),
+    url(r'^version/(?P<pk>\d+)/$', engineer_views.pick_version, name="pick_version"),
     url(r'^ratings/',engineer_views.RatingCreate.as_view(), name='rating_add'),
 
     # url(r'^ratings/(?P<engineer_id>\d+)$',engineer_views.RatingCreate.as_view(), name='rating_add'),
