@@ -40,32 +40,32 @@
 </div>
 {#ABOVE CHANGES BASED ON VERSION A/B#}
 <body>
-<form method="POST" action="{% url 'engineer_detail' engineer.pk %}">
-    {% csrf_token %}
-    <div class = "container column-titles">
-        <div class = "row">
-            <div class = "col-md-1">
-                <h4>Credit</h4><br>
-            </div>
-            <div class = "col-md-3">
-                <h4>Intent and Metric</h4><br>
-            </div>
-            <div class = "col-md-2">
-                <h4>Required?</h4><br>
-            </div>
-            <div class = "col-sm-3">
-                <h4>Level of Achievement</h4><br>
-            </div>
-            <div class = "col-md-1">
-                <h4>Score</h4><br>
-            </div>
-            <div class = "col-md-1">
-                <h4>Points Possible</h4>
-            </div>
+<div class="container column-titles">
+    <div class = "row">
+        <div class = "col-md-1">
+            <h4>Credit</h4><br>
+        </div>
+        <div class = "col-md-3">
+            <h4>Intent and Metric</h4><br>
+        </div>
+        <div class = "col-md-2">
+            <h4>Required?</h4><br>
+        </div>
+        <div class = "col-sm-3">
+            <h4>Level of Achievement</h4><br>
+        </div>
+        <div class = "col-md-1">
+            <h4>Score</h4><br>
+        </div>
+        <div class = "col-md-1">
+            <h4>Points Possible</h4>
         </div>
     </div>
-    <p></p>
-    </div>
+</div>
+<p></p>
+</div>
+<form class="navbar-form navbar-center" method="POST" action="{% url 'engineer_detail' engineer.pk %}">
+    {% csrf_token %}
     <div class = "container headerbox">
         <div class = "row">
             <div class = "col-md-11 quality">
@@ -183,6 +183,44 @@
                 </div>
             </div>
         </div>
+    <p></p>
+{#STARTS QL2.5#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Superior.</b></i></h4>The South Los Angeles Wetland Park is located within a convenient walking distance to bus transit lines operated by Metro and LADOT. Although the traffic and parking study estimated a demand of 170 parking stalls, 67 parking stalls were provided to encourage alternative modes of transportation. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL2.5</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Encourage Alternative Modes of Transportation</b><br>
+                            Improve accessibility to nonmotorized transportation and public transit. Promote alternative transportation and reduce congestion.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_5_inc }}</h4>
+                        {{ rating_form.QL2_5_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_5_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
 {#STARTS QL2.6#}
         <div class="container bigbox">
             <div class="container">
@@ -219,6 +257,7 @@
                 </div>
             </div>
         </div>
+    <p></p>
 {#STARTS QL3.3#}
         <div class="container bigbox">
             <div class="container">
@@ -300,6 +339,7 @@
                 </div>
             </div>
         </div>
+    <p></p>
 {#STARTS LD1.4#}
         <div class="container bigbox">
             <div class="container">
@@ -336,6 +376,7 @@
                 </div>
             </div>
         </div>
+    <p></p>
 {#STARTS LD2.2#}
         <div class="container bigbox">
             <div class="container">
@@ -418,6 +459,7 @@
             </div>
         </div>
     </div>
+    <p></p>
 {#NW2.2#}
     <p></p>
         <div class="container bigbox">
@@ -495,7 +537,7 @@
     </div>
     <p></p>
     <div align= "center"><br>
-        <input type="submit" value="submit" class="btn btn-default" style="width: 100px; height: 40px; font-size: 20px;"/>
+        <input type="submit" value="submit" class="btn btn-primary" style="width: 100px; height: 40px; font-size: 20px;"/>
     </div>
 </form>
 </body>
