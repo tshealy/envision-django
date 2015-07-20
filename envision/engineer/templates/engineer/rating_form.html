@@ -11,7 +11,9 @@
 {% load widget_tweaks %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{%  static "rating.js" %}"></script>
 <link rel = "stylesheet" type="text/css" href="{%  static "styles.css" %}">
+
 
 <html>
 <head lang="en">
@@ -97,16 +99,16 @@
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_1_inc }}</h4>
                         {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
-                        <p># Word count</p>
+                        <p id="ql11">#</p>
                     </div>
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_1_loa }} </h4>
                     </div>
                     <div class="col-md-1 box-yellow">
-                        <h4>##</h4>
+                        <h4 class="selected-points" id="ql11-selected-points">0</h4>
                     </div>
                     <div class="col-md-1 box-white">
-                        <h4>##</h4>
+                        <h4 class="possible-points" id="ql11-possible-points">0</h4>
                     </div>
                 </div>
             </div>
