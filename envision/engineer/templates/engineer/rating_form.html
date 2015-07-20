@@ -8,6 +8,7 @@
 
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
+{% load widget_tweaks %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel = "stylesheet" type="text/css" href="{%  static "styles.css" %}">
@@ -17,111 +18,529 @@
     <meta charset="UTF-8">
     <title>Rating Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class = "navbar navbar-default navbar-fixed-top">
+        <ul class="nav navbar-nav">
+            <li class ="navbar-brand">Envision Rating System</li>
+            <li class="navbar-brand">Total Score: ##</li>
+            <li class ="navbar-brand">Points Possible: ##</li>
+        </ul>
+    </div>
 </head>
-
 <body>
-<div class = "navbar navbar-default navbar-static-top">
+{#BELOW CHANGES BASED ON VERSION A/B#}
+<div class = "container south-box">
     <div class = "container">
-        <div class = "navbar-brand">Quality of Life</div>
+        <div class = "row">
+            <div class="col-md-4">
+                <img src={% static "images/south_la_park.jpg" %} />
+            </div>
+            <div class="col-md-4">
+                <h4>We provided an example project to help with your assessment.</h4>
+                <p>The South Los Angeles Wetland Park is a nature park and sustainable stormwater treatment wetland constructed on a former Brownfield site in Los Angeles, CA. Both the previous site and end result are similar to what is possible in Cordova, AL. Included below are examples to explain how the South LA team achieved a platinum rating.</p>
+            </div>
+        </div>
     </div>
 </div>
-
-<form method="post" action="{% url 'rating_add' %}">
-    {% csrf_token %}
-
-    <table class = "table">
-        <thead>
-        <tr>
-            <th>Credit</th>
-            <th>Credit Intent<br>and Metric</th>
-            <th>Is this Required<br>for the Project?</th>
-            <th>Level of<br>Achievement</th>
-            <th>Score</th>
-            <th>Possible<br>Points</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-            <td>Credit</td>
-            <td>Credit Intent<br>and Metric</td>
-            <td>{{ form.QL1_1_inc }}</td>
-            <td>{{ form.QL1_1_loa }}</td>
-            <td>Score</td>
-            <td>Possible<br>Points</td>
-        </tr>
-
-        {{ form.QL1_1_exp }}
-
-
-
-        </tbody>
-    </table>
-    <input type=hidden" name="engineer_id" value="1">
-    <input type="submit" value="Submit" />
-</form>
-
-<div class = "container">
+{#ABOVE CHANGES BASED ON VERSION A/B#}
+<div class="container column-titles">
     <div class = "row">
-        <div class = "col-md-1 box">
+        <div class = "col-md-1">
             <h4>Credit</h4><br>
         </div>
-        <div class = "col-md-3 box">
+        <div class = "col-md-3">
             <h4>Intent and Metric</h4><br>
         </div>
-        <div class = "col-md-2 box">
+        <div class = "col-md-2">
             <h4>Required?</h4><br>
         </div>
-        <div class = "col-md-2 box">
-            <h4>Level of Achievement </h4>
+        <div class = "col-sm-3">
+            <h4>Level of Achievement</h4><br>
         </div>
-        <div class = "col-md-1 box">
+        <div class = "col-md-1">
             <h4>Score</h4><br>
         </div>
-        <div class = "col-md-1 box">
+        <div class = "col-md-1">
             <h4>Points Possible</h4>
         </div>
     </div>
 </div>
-
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-10 box-ql">
-            <h3>Quality of Life</h3>
+<p></p>
+</div>
+<form class="navbar-form navbar-center" method="POST" action="{% url 'engineer_detail' engineer.pk %}">
+    {% csrf_token %}
+    <div class = "container headerbox">
+        <div class = "row">
+            <div class = "col-md-11 quality">
+                <h3>Quality of Life</h3>
+            </div>
         </div>
     </div>
-</div>
-
-<div class = "container">
-    <div class = "row">
-        <div class = "col-md-10 box-ql">
-        <p><b>Example Project: This row only shows on version 2</b></p>
+    <p></p>
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Conserving.</b></i></h4>The project team minimized the discharge of pollutants from urban run-off to receiving water; while at the same time providing a critically important open green space, public-use facilities, and recreational and educational amenities to a community that was in desperate need.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL1.1</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Improve Community Quality of Life</b><br>
+                            Improve the net quality of life of all communities affected by the project and mitigate negative
+                            impacts to communities.<br><a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_inc }}</h4>
+                        {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+{#STARTS QL1.2#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Restorative.</b></i></h4>The project team transformed the blighted maintenance yard into a landscaped open space for the community. This improved community attractiveness and provided a recreational facility to enhance the overall community.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL1.2</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Stimulate Sustainable Growth and Development</b><br>
+                            Support and stimulate sustainable growth and development, including improvements in job growth, capacity building, productivity, business attractiveness, and livability.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_2_inc }}</h4>
+                        {{ rating_form.QL1_2_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_2_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS QL2.3#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Restorative.</b></i></h4>The project team conducted an assessment of lighting needs and found only security lighting along the pedestrian walkways were needed. The project uses solar lights with cut-off lenses to reduce both lighting energy requirements and light spillage.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL2.3</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Minimize Light Pollution</b><br>
+                            Minimize noise and vibration generated during construction and operation of the completed project to maintain and improve community livability.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_3_inc }}</h4>
+                        {{ rating_form.QL2_3_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_3_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS QL2.5#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Superior.</b></i></h4>The South Los Angeles Wetland Park is located within a convenient walking distance to bus transit lines operated by Metro and LADOT. Although the traffic and parking study estimated a demand of 170 parking stalls, 67 parking stalls were provided to encourage alternative modes of transportation. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL2.5</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Encourage Alternative Modes of Transportation</b><br>
+                            Improve accessibility to nonmotorized transportation and public transit. Promote alternative transportation and reduce congestion.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_5_inc }}</h4>
+                        {{ rating_form.QL2_5_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_5_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS QL2.6#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Restorative.</b></i></h4>The project team developed wayfinding signage located near the entrance of the park, including a large detailed map of the overall site and a brief overview of the project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL2.6</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Improve Site Accessibility, Safety and Way Finding</b><br>
+                            Improve user accessibility, safety, and wayfinding of the site and surrounding areas.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_6_inc }}</h4>
+                        {{ rating_form.QL2_6_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL2_6_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS QL3.3#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ql">
+                        <p><h4>South LA achieved <i><b>Restorative.</b></i></h4>The project team developed wetland and riparian habitat, trails, boardwalks, and educational and public use facilities. The site minimizes discharge of pollutants from urban run-off to receiving waters.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL3.3</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Enhance Public Space</b><br>
+                            Improve public spaces including parks, plazas, recreational facilities, or wildlife refuges to enhance community livability.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL3_3_inc }}</h4>
+                        {{ rating_form.QL3_3_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL3_3_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class = "container headerbox">
+            <div class = "row">
+                <div class = "col-md-11 leadership">
+                    <h3>Leadership</h3>
+                </div>
+            </div>
+        </div>
+        <p></p>
+{#STARTS LD1.2#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ld">
+                        <p><h4>South LA achieved <i><b>Superior.</b></i></h4>The project team worked with local salvage and recycling companies to divert 83% of their waste stream from the landfill. A Waste Management Plan was established early in project development and implemented at each project phase.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:gray">LD1.2</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Establish a Sustainability Management System</b><br>
+                            Create a project management system that can manage the scope, scale, and complexity of a project seeking to improve sustainable performance.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD1_2_inc }}</h4>
+                        {{ rating_form.LD1_2_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD1_2_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS LD1.4#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ld">
+                        <p><h4>South LA achieved <i><b>Conserving.</b></i></h4>Stakeholders include the local community, Council Office, Mayor, Department of Recreation and Parks, Bureau of Engineering, and Bureau of Sanitation. The project team solicited and assessed stakeholder issues and concerns through stakeholder meetings. The project team provided public outreach to engage the community during pre-design, ground breaking and grand opening ceremonies. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:gray">LD1.4</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Provide for Stakeholder Involvement.</b><br>
+                            Establish sound and meaningful programs for stakeholder identification, engagement, and involvement in project decision making.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD1_4_inc }}</h4>
+                        {{ rating_form.LD1_4_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD1_4_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p></p>
+{#STARTS LD2.2#}
+        <div class="container bigbox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 box-example-ld">
+                        <p><h4>South LA achieved <i><b>Conserving.</b></i></h4>The project team integrated storm water best management practices (BMPs) to enhance the quality of runoff prior to release back to the storm drain network. In addition the project is designed to treat urban runoff from a 525-acre contributing watershed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:gray">LD2.2</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Improve Infrastructure Integration</b><br>
+                            Create a project management system that can manage the scope, scale, and complexity of a project seeking to improve sustainable performance.<br>
+                            <a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD2_2_inc }}</h4>
+                        {{ rating_form.LD2_2_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.LD2_2_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <hr>
+{#    BEGINS NATURAL WORLD#}
+    <div class = "container headerbox">
+        <div class = "row">
+            <div class = "col-md-11 natural-world">
+                <h3>Natural World</h3>
+            </div>
         </div>
     </div>
-</div>
-<div class = "container quality ">
-    <div class = "row">
-        <div class = "col-md-1 ">
-            <h4>QL1.1</h4>
+    <p></p>
+{#NW1.2#}
+    <div class="container bigbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 box-example-nw">
+                    <p><h4>South LA achieved <i><b>Resorative.</b></i></h4>A wetland with riparian and emergent marsh habitat was created at the center of a densely populated urban community. The project team and city changed the land use designation of the site from Light Industrial to Open Space in order to ensure the continued use of the site as a wetland park.</p>
+                </div>
+            </div>
         </div>
-        <div class = "col-md-3 box-white">
-            <p><b>Improve Community Quality of Life</b></b><br>
-            Improve the net quality of life of all communities affected by the project and mitigate negative impacts to communities.</p>
-        </div>
-        <div class = "col-md-2">
-            <h4>{{ form.QL1_1_inc }}</h4>
-            {{ form.QL1_1_exp }}
-        </div>
-        <div class = "col-md-2">
-            <h4>{{ form.QL1_1_loa }} </h4>
-        </div>
-        <div class = "col-md-1 box-yellow">
-            <h4>##</h4>
-        </div>
-        <div class = "col-md-1 box-white">
-            <h4>##</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <h4 style="color:darkolivegreen">NW1.2</h4>
+                </div>
+                <div class="col-md-3 textbox">
+                    <p><b>Protect Wetlands and Surface Water</b><br>
+                        Protect, buffer, enhance, and restore areas designated as wetlands, shorelines, and waterbodies by providing natural buffer zones, vegetation, and soil-protection zones.
+                        <br><a href="#" target="_blank">detail/guidance</a></p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW1_2_inc }}</h4>
+                    {{ rating_form.NW1_2_exp |attr:"rows:4" |attr:"cols:78" }}
+                    <p># Word count</p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW1_2_loa }} </h4>
+                </div>
+                <div class="col-md-1 box-yellow">
+                    <h4>##</h4>
+                </div>
+                <div class="col-md-1 box-white">
+                    <h4>##</h4>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <p></p>
+{#NW2.2#}
+    <p></p>
+        <div class="container bigbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 box-example-nw">
+                    <p><h4>South LA achieved <i><b>Conserving.</b></i></h4>The project incorporated native California plant species that require no pesticides or fertilizer. Project includes open water, emergent marsh, riparian and upland plants.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <h4 style="color:darkolivegreen">NW2.2</h4>
+                </div>
+                <div class="col-md-3 textbox">
+                    <p><b>Reduce Pesticide and Fertilizer Impacts</b><br>
+                        Reduce non-point-source pollution by reducing the quantity, toxicity, bioavailability, and persistence of pesticides and fertilizers.
+                        <br><a href="#" target="_blank">detail/guidance</a></p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW2_2_inc }}</h4>
+                    {{ rating_form.NW2_2_exp |attr:"rows:4" |attr:"cols:78" }}
+                    <p># Word count</p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW2_2_loa }} </h4>
+                </div>
+                <div class="col-md-1 box-yellow">
+                    <h4>##</h4>
+                </div>
+                <div class="col-md-1 box-white">
+                    <h4>##</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+{#NW2.3#}
+    <p></p>
+        <div class="container bigbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 box-example-nw">
+                    <p><h4>South LA achieved <i><b>Restorative.</b></i></h4>The project team designed for 100% collection of dry weather runoff from the regional storm drain network. In addition, all wetland cells are lined with a primary geosynthetic clay liner (GCL) to form an impermeable layer that 1) prevents water loss via infiltration and 2) prevents infiltration into the former Brownfield site.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <h4 style="color:darkolivegreen">NW2.3</h4>
+                </div>
+                <div class="col-md-3 textbox">
+                    <p><b>Prevent Surface and Groundwater Contamination</b><br>
+                        Preserve freshwater resources by incorporating measures to prevent pollutants from contaminating surface and groundwater and monitor impacts over operations.
+                        <br><a href="#" target="_blank">detail/guidance</a></p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW2_3_inc }}</h4>
+                    {{ rating_form.NW2_3_exp |attr:"rows:4" |attr:"cols:78" }}
+                    <p># Word count</p>
+                </div>
+                <div class="col-md-2">
+                    <h4>{{ rating_form.NW2_3_loa }} </h4>
+                </div>
+                <div class="col-md-1 box-yellow">
+                    <h4>##</h4>
+                </div>
+                <div class="col-md-1 box-white">
+                    <h4>##</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div align= "center"><br>
+        <input type="submit" value="submit" class="btn btn-primary" style="width: 100px; height: 40px; font-size: 20px;"/>
+    </div>
+</form>
 </body>
 </html>

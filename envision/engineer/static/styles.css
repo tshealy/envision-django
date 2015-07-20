@@ -1,32 +1,109 @@
+.south-box {
+    padding-left: 200px;
+    padding-bottom: 30px;
+    margin: 5em 0 0 0;
+
+
+}
+img {
+    width:100%;
+}
+.column-titles {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #E7E7E7;
+    background: #F8F8F8;
+    padding-left: 95px;
+    text-align: center;
+    color: #777;
+}
+.headerbox {
+    /*border-radius: 5px;*/
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: lightgrey;*/
+    padding-left: 95px;
+    text-align: center;
+}
+.bigbox {
+    /*border-radius: 5px;*/
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: #E7E7E7;*/
+    padding-left: 90px;
+}
 .box {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
+    text-align: center;
+    border-color: lightgrey;
 }
-.box-ql {
+.box-example-ql {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(229, 103, 23, 0.8);
+    background-color: white;
+}
+.box-example-ld {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    background-color: white;
+}
+.box-example-nw {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: olive;
+    background-color: white;
+}
+.textbox {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 0px;
+    /*border-color: rgba(229, 103, 23, 0.8);*/
+    background-color: #F8F8F8;
+    padding-top: 5px;
+    padding-top: 10px;
 }
 .box-white {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(229, 103, 23, 0.8);
-    background-color: snow;
+    border-color: #E7E7E7;
+    background-color: white;
+    text-align: center;
 }
 .box-yellow {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(229, 103, 23, 0.8);
+    border-color: #E7E7E7;
     background-color: yellow;
+    text-align: center;
 }
 .quality {
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
 }
-
+.leadership {
+    background-color: gray;
+    border-radius: 3px;
+}
+.natural-world {
+    background-color: darkolivegreen;
+    border-radius: 3px;
+}
+.credits-ql {
+    background-color: rgba(229, 103, 23, 0.8);
+    border-radius: 3px;
+}
+#id_QL1_1_exp{
+    color: red;
+}
 
 
