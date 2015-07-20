@@ -29,87 +29,112 @@
     <form method="POST" action="{% url 'engineer_detail' engineer.pk %}">
         {% csrf_token %}
 
-    <div class = "container">
+    <div class = "container column-titles">
         <div class = "row">
-            <div class = "col-md-1 box">
+            <div class = "col-md-1">
                 <h4>Credit</h4><br>
             </div>
-            <div class = "col-md-3 box">
+            <div class = "col-md-3">
                 <h4>Intent and Metric</h4><br>
             </div>
-            <div class = "col-md-2 box">
+            <div class = "col-md-2">
                 <h4>Required?</h4><br>
             </div>
-            <div class = "col-md-2 box">
-                <h4>Level of Achievement</h4>
+            <div class = "col-sm-3">
+                <h4>Level of Achievement</h4><br>
             </div>
-            <div class = "col-md-1 box">
+            <div class = "col-md-1">
                 <h4>Score</h4><br>
             </div>
-            <div class = "col-md-1 box">
+            <div class = "col-md-1">
                 <h4>Points Possible</h4>
             </div>
         </div>
     </div>
-    <br>
-    <div class = "container">
+    <p></p>
+    <div class = "container headerbox">
         <div class = "row">
-            <div class = "col-md-10 quality">
+            <div class = "col-md-11 quality">
                 <h3>Quality of Life</h3>
             </div>
         </div>
     </div>
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 box-ql">
-                <p><b>Example Project: This row only shows on version 2</b></p>
+    <p></p>
+    <div class="container bigbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 box-example">
+                    <p><h5>Example Project</h5><b>Conserving:</b> This innovative project minimized the discharge of pollutants from urban run-off to receiving water; while at the same time providing a critically important open green space, public-use facilities, and recreational and educational amenities to a community that was in desperate need.</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 box-ql">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <h4>QL1.1</h4>
-                        </div>
-                        <div class="col-md-3 textbox">
-                            <p><b>Improve Community Quality of Life</b><br>
-                                Improve the net quality of life of all communities affected by the project and mitigate negative
-                                impacts to communities.<br></p>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>{{ rating_form.QL1_1_inc }}</h4>
-                            {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
-                            <p># Word count</p>
-                        </div>
-                        <div class="col-md-2">
-                            <h4>{{ rating_form.QL1_1_loa }} </h4>
-                        </div>
-                        <div class="col-md-1 box-yellow">
-                            <h4>##</h4>
-                        </div>
-                        <div class="col-md-1 box-white">
-                            <h4>##</h4>
-                        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL1.1</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Improve Community Quality of Life</b><br>
+                            Improve the net quality of life of all communities affected by the project and mitigate negative
+                            impacts to communities.<br><a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_inc }}</h4>
+                        {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <p></p>
+    <div class="container bigbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 box-example">
+                    <p><h5>Example Project</h5><b>Conserving:</b> This innovative project minimized the discharge of pollutants from urban run-off to receiving water; while at the same time providing a critically important open green space, public-use facilities, and recreational and educational amenities to a community that was in desperate need.</p>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <h4 style="color:#E56717">QL1.1</h4>
+                    </div>
+                    <div class="col-md-3 textbox">
+                        <p><b>Improve Community Quality of Life</b><br>
+                            Improve the net quality of life of all communities affected by the project and mitigate negative
+                            impacts to communities.<br><a href="#" target="_blank">detail/guidance</a></p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_inc }}</h4>
+                        {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:75" }}
+                        <p># Word count</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h4>{{ rating_form.QL1_1_loa }} </h4>
+                    </div>
+                    <div class="col-md-1 box-yellow">
+                        <h4>##</h4>
+                    </div>
+                    <div class="col-md-1 box-white">
+                        <h4>##</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <div align= "center"><br>
         <input type="submit" value="submit" style="width: 100px; height: 40px; font-size: 20px;"/>
     </div>
-</form>
-<form method="POST" action="{% url 'engineer_detail' engineer.pk %}">
-    {% csrf_token %}
-    {{ rating_form.as_p }}
-
-    <!-- Provide a button to click to submit the form. -->
-    <input type="submit" name="submit" value="Register"/>
 </form>
 </body>
 </html>

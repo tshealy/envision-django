@@ -1,21 +1,47 @@
+.column-titles {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    background: lightgrey;
+    padding-left: 95px;
+    text-align: center;
+}
+.headerbox {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    padding-left: 95px;
+    text-align: center;
+}
+.bigbox {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    padding-left: 90px;
+}
 .box {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
     text-align: center;
+    border-color: lightgrey;
 }
-.box-ql {
+.box-example {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(229, 103, 23, 0.8);
+    background-color: ghostwhite;
 }
 .textbox {
     border-radius: 3px;
     border-style: solid;
-    border-width: 1px;
-    border-color: rgba(229, 103, 23, 0.8);
-    background-color: snow;
+    border-width: 0px;
+    /*border-color: rgba(229, 103, 23, 0.8);*/
+    background-color: lightgray;
     padding-top: 5px;
     padding-top: 10px;
 }
@@ -43,7 +69,6 @@
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
 }
-
 #id_QL1_1_exp{
     color: red;
 }
