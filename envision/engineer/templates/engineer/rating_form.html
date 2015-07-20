@@ -13,33 +13,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel = "stylesheet" type="text/css" href="{%  static "styles.css" %}">
 
-<div class = "navbar navbar-default navbar-static-top">
-    <div class = "container">
-        <h1 class = "navbar-brand">Envision Rating System:</h1>
-    </div>
-</div>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>Rating Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class = "navbar navbar-default navbar-fixed-top">
+        <ul class="nav navbar-nav">
+            <li class ="navbar-brand">Envision Rating System</li>
+            <li class="navbar-brand">Total Score: ##</li>
+            <li class ="navbar-brand">Points Possible: ##</li>
+        </ul>
+    </div>
 </head>
+<body>
 {#BELOW CHANGES BASED ON VERSION A/B#}
 <div class = "container south-box">
     <div class = "container">
         <div class = "row">
             <div class="col-md-4">
-                <img src="/images/south_la_park.jpeg" alt="South LA Wetlands Park" style="width:304px;height:188px;">
+                <img src={% static "images/south_la_park.jpg" %} />
             </div>
-            <div class="col-md-6">
-                <h4>We provided an example project to help with your assessment</h4>
+            <div class="col-md-4">
+                <h4>We provided an example project to help with your assessment.</h4>
                 <p>The South Los Angeles Wetland Park is a nature park and sustainable stormwater treatment wetland constructed on a former Brownfield site in Los Angeles, CA. Both the previous site and end result are similar to what is possible in Cordova, AL. Included below are examples to explain how the South LA team achieved a platinum rating.</p>
             </div>
         </div>
     </div>
 </div>
 {#ABOVE CHANGES BASED ON VERSION A/B#}
-<body>
 <div class="container column-titles">
     <div class = "row">
         <div class = "col-md-1">

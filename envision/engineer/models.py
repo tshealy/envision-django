@@ -12,7 +12,7 @@ class Engineer(models.Model):
 
     name = models.CharField(max_length=255)
 
-    version = models.IntegerField()
+    version = models.IntegerField(null=True)
 
     total_time = models.IntegerField(default=0)
 
@@ -113,7 +113,7 @@ class Rating(models.Model):
     )
     LD1_2_inc = models.IntegerField(choices=include, default=0)
     LD1_2_loa = models.IntegerField(choices=ld_loa_1_2, default=0)
-    LDL1_2_exp = models.TextField(max_length=1000, null=True, blank=True)
+    LD1_2_exp = models.TextField(max_length=1000, null=True, blank=True)
 
 
     ld_loa_1_4 = (

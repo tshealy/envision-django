@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('engineer', '0002_auto_20150719_0049'),
+        ('engineer', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='rating',
-            name='QL1_1_exp',
-            field=models.TextField(max_length=500, null=True, blank=True),
+            model_name='engineer',
+            name='version',
+            field=models.IntegerField(null=True),
         ),
     ]
