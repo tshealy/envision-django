@@ -1,6 +1,6 @@
 .south-box {
     padding-left: 200px;
-    padding-bottom: 30px;
+    padding-bottom: -10px;
     margin: 5em 0 0 0;
 }
 img {
@@ -24,6 +24,7 @@ img {
     padding-left: 95px;
     text-align: center;
     margin-bottom: 10px;
+    margin-top: 40px;
 }
 .bigbox {
     /*border-radius: 5px;*/
@@ -33,6 +34,11 @@ img {
     padding-left: 90px;
     margin-bottom: 10px;
 }
+
+.bigbox.row {
+    border-style: solid;
+}
+
 .box {
     border-radius: 3px;
     border-style: solid;
@@ -106,5 +112,14 @@ img {
     margin-top: 50px;
 }
 .version-one{
+    display: none;
     margin-left: 5px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.data{
+    visibility: hidden;
 }

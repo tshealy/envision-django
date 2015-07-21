@@ -12,9 +12,13 @@ $(function() {
         write.text(textArea.val().length)
     };
 
+    $("textarea").keyup(function(){
+        $(this).closest($(".current-count").text( $(this).val().length ));
+    });
+
     function characterCounts(){
         $("#id_QL1_1_exp").keyup(function(){
-            writeCharacterCount($("#id_QL1_1_exp"), $("#ql11"));
+            //writeCharacterCount($("#id_QL1_1_exp"), $(".current-count"));
         });
         $("#id_QL1_2_exp").keyup(function(){
             writeCharacterCount($("#id_QL1_2_exp"), $("#ql12"));
@@ -64,51 +68,39 @@ $(function() {
 
     function possiblePoints() {
         var points = getLastValue( $("#id_QL1_1_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql11-possible-points"), points);
 
         var points = getLastValue( $("#id_QL1_2_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql12-possible-points"), points);
 
         var points = getLastValue( $("#id_QL2_3_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql23-possible-points"), points);
 
         var points = getLastValue( $("#id_QL2_5_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql25-possible-points"), points);
 
         var points = getLastValue( $("#id_QL2_6_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql26-possible-points"), points);
 
         var points = getLastValue( $("#id_QL3_3_loa"));
-        console.log(points);
         writePossiblePoints( $("#ql33-possible-points"), points);
 
         var points = getLastValue( $("#id_LD1_2_loa"));
-        console.log(points);
         writePossiblePoints( $("#ld12-possible-points"), points);
 
         var points = getLastValue( $("#id_LD1_4_loa"));
-        console.log(points);
         writePossiblePoints( $("#ld14-possible-points"), points);
 
         var points = getLastValue( $("#id_LD2_2_loa"));
-        console.log(points);
         writePossiblePoints( $("#ld22-possible-points"), points);
 
         var points = getLastValue( $("#id_NW1_2_loa"));
-        console.log(points);
         writePossiblePoints( $("#nw12-possible-points"), points);
 
         var points = getLastValue( $("#id_NW2_2_loa"));
-        console.log(points);
         writePossiblePoints( $("#nw22-possible-points"), points);
 
         var points = getLastValue( $("#id_NW2_3_loa"));
-        console.log(points);
         writePossiblePoints( $("#nw23-possible-points"), points);
 
     };
@@ -125,11 +117,11 @@ $(function() {
         $("#id_QL2_3_loa").change(function() {
             $("#ql23-selected-points").text($("#id_QL2_3_loa :selected").val());
         });
+        $("#id_QL2_5_loa").change(function() {
+            $("#ql25-selected-points").text($("#id_QL2_5_loa :selected").val());
+        });
         $("#id_QL2_6_loa").change(function() {
             $("#ql26-selected-points").text($("#id_QL2_6_loa :selected").val());
-        });
-        $("#id_QL2_5_loa").change(function() {
-            $("#ql25-selected-points").text($("#id_QL2_6_loa :selected").val());
         });
         $("#id_QL3_3_loa").change(function() {
             $("#ql33-selected-points").text($("#id_QL3_3_loa :selected").val());
@@ -159,6 +151,7 @@ $(function() {
     function included(){
         $("#id_QL1_1_inc").change(function(){
            if ($("#id_QL1_1_inc :selected").val() == 1) {
+               $("#id_QL1_1_loa").val(0);
                $("#id_QL1_1_loa").prop("disabled", true);
                writePossiblePoints( $("#ql11-selected-points"), 0 );
                writePossiblePoints( $("#ql11-possible-points"), 0 );
@@ -295,15 +288,42 @@ $(function() {
 
     };
 
+     function totalPossibelPoints() {
+        var arr = $(".possible-points");
+        var total = 0;
+        for (var i = 0; i < arr.length; i++) {
+            total += parseInt(arr[i].innerHTML);
+        };
+        $("#total-possible").text(total);
+    };
 
+    function totalSelectedPoints() {
+        var arr = $(".selected-points");
+        var total = 0;
+        for (var i = 0; i < arr.length; i++) {
+            total += parseInt(arr[i].innerHTML);
+        };
+        $("#total-selected").text(total);
+    };
 
+    $("select").change(function(){
+        setTimeout(function(){
+            totalPossibelPoints();
+            totalSelectedPoints();
+        }, 1);
+    });
 
+    if (parseInt($(".data").html()) === 1){
+        $(".version-one").show();
+    };
 
 
     characterCounts();
     possiblePoints();
     selectedPoints();
     included();
+    totalPossibelPoints();
+    totalSelectedPoints();
 
 });
 
