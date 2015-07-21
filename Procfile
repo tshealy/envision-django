@@ -1,1 +1,1 @@
-web: gunicorn envision.wsgi --log-file
+web: gunicorn envision.wsgi --log-file -
