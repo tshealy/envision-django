@@ -2,8 +2,6 @@
     padding-left: 200px;
     padding-bottom: 30px;
     margin: 5em 0 0 0;
-
-
 }
 img {
     width:100%;
@@ -25,6 +23,7 @@ img {
     /*border-color: lightgrey;*/
     padding-left: 95px;
     text-align: center;
+    margin-bottom: 10px;
 }
 .bigbox {
     /*border-radius: 5px;*/
@@ -32,6 +31,7 @@ img {
     /*border-width: 1px;*/
     /*border-color: #E7E7E7;*/
     padding-left: 90px;
+    margin-bottom: 10px;
 }
 .box {
     border-radius: 3px;
@@ -101,4 +101,10 @@ img {
 .credits-ql {
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
+}
+.text-example{
+    margin-top: 50px;
+}
+.version-one{
+    margin-left: 5px;
 }
