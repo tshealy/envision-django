@@ -65,8 +65,8 @@
                     </div>
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_1_inc }}</h4>
-                        {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" }}
-                        <span class="current-count">0</span>  /  <span class="required-count"> 0 </span>
+                        {{ rating_form.QL1_1_exp |attr:"rows:4" |attr:"cols:78" |attr:'id:text-area-1'}}
+                        <span class="current-count" id="span-1">0</span>  /  <span class="required-count"> 0 </span>
                     </div>
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_1_loa }} </h4>
@@ -102,7 +102,7 @@
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_2_inc }}</h4>
                         {{ rating_form.QL1_2_exp |attr:"rows:4" |attr:"cols:78" }}
-                         <span class="current-count">0</span>  /  <span class="required-count"> 0 </span>
+                        <span class="current-count">0</span>  /  <span class="required-count"> 0 </span>
                     </div>
                     <div class="col-md-2">
                         <h4>{{ rating_form.QL1_2_loa }} </h4>

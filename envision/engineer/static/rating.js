@@ -12,8 +12,23 @@ $(function() {
         write.text(textArea.val().length)
     };
 
+    //$('textArea').on('click',function(){
+    //    var id = this.id;
+    //
+    //})
+
     $("textarea").keyup(function(){
-        $(this).closest($(".current-count").text( $(this).val().length ));
+
+
+       var text_and_span = $(this).siblings();
+
+       var current_span = text_and_span.siblings('.current-count');
+
+        current_span.text( $(this).val().length );
+
+        //$(this).siblings($(".current-count").text( $(this).val().length ));
+
+
     });
 
     function characterCounts(){
@@ -318,7 +333,7 @@ $(function() {
     };
 
 
-    characterCounts();
+    //characterCounts();
     possiblePoints();
     selectedPoints();
     included();
