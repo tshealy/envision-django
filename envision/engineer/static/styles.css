@@ -1,11 +1,33 @@
 .south-box {
-    padding-left: 200px;
-    padding-bottom: -10px;
-    margin: 5em 0 0 0;
+    margin-top: 5em;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5em;
 }
+
+
 img {
-    width:100%;
+    width: 50%;
+    float: left;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
 }
+#image-description {
+    width: 50%;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    float: right;
+}
+
+#title {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
 .column-titles {
     border-radius: 5px;
     border-style: solid;
@@ -16,28 +38,31 @@ img {
     text-align: center;
     color: #777;
 }
+
 .headerbox {
     /*border-radius: 5px;*/
     /*border-style: solid;*/
     /*border-width: 1px;*/
     /*border-color: lightgrey;*/
-    padding-left: 95px;
+    /*padding-left: 95px;*/
     text-align: center;
-    margin-bottom: 10px;
-    margin-top: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both
 }
+
 .bigbox {
     /*border-radius: 5px;*/
-    /*border-style: solid;*/
+    border-style: solid;
     /*border-width: 1px;*/
-    /*border-color: #E7E7E7;*/
-    padding-left: 90px;
+    border-color: #E7E7E7;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 10px;
 }
 
-.bigbox.row {
-    border-style: solid;
-}
 
 .box {
     border-radius: 3px;
@@ -93,8 +118,14 @@ img {
     text-align: center;
 }
 .quality {
+    height: 4em;
+
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
+}
+
+.quality-title {
+   line-height: 2.5em;
 }
 .leadership {
     background-color: gray;
@@ -108,12 +139,10 @@ img {
     background-color: rgba(229, 103, 23, 0.8);
     border-radius: 3px;
 }
-.text-example{
-    margin-top: 50px;
-}
+
 .version-one{
     display: none;
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 .hidden{
@@ -123,3 +152,8 @@ img {
 .data{
     visibility: hidden;
 }
+
+/*textarea {*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+/*}*/
