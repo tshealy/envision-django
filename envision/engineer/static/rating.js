@@ -7,18 +7,27 @@ $(function() {
         'Superior': 200,
         'Conserving': 250,
         'Restorative': 300,
+        'Exclude': 50,
     }
     //character count for textarea
     $("textarea").keyup(function(){
-
-       var text_and_span = $(this).siblings();
-
-       var current_span = text_and_span.siblings('.current-count');
+        var text_and_span = $(this).siblings();
+        var current_span = text_and_span.siblings('.current-count');
 
         current_span.text( $(this).val().length );
 
         //$(this).siblings($(".current-count").text( $(this).val().length ));
 
+    });
+
+    $("select").change(function(){
+        var row = $(this).parent().siblings(".row");
+        console.log($(this).parent().siblings("h4").find("select"));
+        var text = $(this).children(':selected').text();
+        if (text === "Include") {
+            text = $(this).parent().siblings("h4").find("select").children(':selected').text()
+        }
+        row.find(".required-count").text(charCounts[text]);
     });
 
     //function writeCharacterCount(textArea, write) {
