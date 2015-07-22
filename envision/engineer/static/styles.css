@@ -68,7 +68,7 @@ img {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    text-align: center;
+    padding: 0.5%;
     border-color: lightgrey;
 }
 .box-example-ql {
@@ -124,14 +124,16 @@ img {
     border-radius: 3px;
 }
 
-.quality-title {
+.category-title {
    line-height: 2.5em;
 }
 .leadership {
+    height: 4em;
     background-color: gray;
     border-radius: 3px;
 }
 .natural-world {
+    height: 4em;
     background-color: darkolivegreen;
     border-radius: 3px;
 }
