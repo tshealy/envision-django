@@ -115,4 +115,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "engineer/"
+# STATIC_ROOT = "engineer/"
