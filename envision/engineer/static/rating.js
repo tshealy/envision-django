@@ -13,16 +13,15 @@ $(function() {
     $("textarea").keyup(function(){
         var text_and_span = $(this).siblings();
         var current_span = text_and_span.siblings('.current-count');
-
-        current_span.text( $(this).val().length );
-
-        //$(this).siblings($(".current-count").text( $(this).val().length ));
-
+        var textCount = current_span.text( $(this).val().length);
+        return textCount
     });
+
+
 
     $("select").change(function(){
         var row = $(this).parent().siblings(".row");
-        console.log($(this).parent().siblings("h4").find("select"));
+
         var text = $(this).children(':selected').text();
         if (text === "Include") {
             text = $(this).parent().siblings("h4").find("select").children(':selected').text()
@@ -30,49 +29,34 @@ $(function() {
         row.find(".required-count").text(charCounts[text]);
     });
 
-    //function writeCharacterCount(textArea, write) {
-    //    write.text(textArea.val().length)
-    //};
-    //
-    //function characterCounts(){
-    //    $("#id_QL1_1_exp").keyup(function(){
-    //        //writeCharacterCount($("#id_QL1_1_exp"), $(".current-count"));
-    //    });
-    //    $("#id_QL1_2_exp").keyup(function(){
-    //        writeCharacterCount($("#id_QL1_2_exp"), $("#ql12"));
-    //    });
-    //    $("#id_QL2_3_exp").keyup(function(){
-    //        writeCharacterCount($("#id_QL2_3_exp"), $("#ql23"));
-    //    });
-    //    $("#id_QL2_5_exp").keyup(function(){
-    //        writeCharacterCount($("#id_QL2_5_exp"), $("#ql25"));
-    //    });
-    //    $("#id_QL2_6_exp").keyup(function(){
-    //        writeCharacterCount($("#id_QL2_6_exp"), $("#ql26"));
-    //    });
-    //    $("#id_QL3_3_exp").keyup(function(){
-    //        writeCharacterCount($("#id_QL3_3_exp"), $("#ql33"));
-    //    });
-    //    $("#id_LD1_2_exp").keyup(function(){
-    //        writeCharacterCount($("#id_LD1_2_exp"), $("#ld12"));
-    //    });
-    //    $("#id_LD1_4_exp").keyup(function(){
-    //        writeCharacterCount($("#id_LD1_4_exp"), $("#ld14"));
-    //    });
-    //    $("#id_LD2_2_exp").keyup(function(){
-    //        writeCharacterCount($("#id_LD2_2_exp"), $("#ld22"));
-    //    });
-    //    $("#id_NW1_2_exp").keyup(function(){
-    //        writeCharacterCount($("#id_NW1_2_exp"), $("#nw12"));
-    //    });
-    //    $("#id_NW2_2_exp").keyup(function(){
-    //        writeCharacterCount($("#id_NW2_2_exp"), $("#nw22"));
-    //    });
-    //    $("#id_NW2_3_exp").keyup(function(){
-    //        writeCharacterCount($("#id_NW2_3_exp"), $("#nw23"));
-    //    });
-    //
-    //};
+
+    function checkCharCount() {
+        if (currentCount() < requiredCount()) {
+            console.log("can't submit")
+    }
+    };
+
+    function currentCount() {
+         var textCount = $("textarea").keyup(function () {
+            var text_and_span = $(this).siblings();
+            var current_span = text_and_span.siblings('.current-count');
+            var textCount = current_span.text($(this).val().length);
+        });
+        return textCount
+    }
+
+    function requiredCount() {
+        var requiredCount = $("select").change(function(){
+            var row = $(this).parent().siblings(".row");
+
+            var text = $(this).children(':selected').text();
+            if (text === "Include") {
+                text = $(this).parent().siblings("h4").find("select").children(':selected').text()
+            }
+            row.find(".required-count").text(charCounts[text]);
+    });
+        return requiredCount
+    }
 
     function getLastValue(dropdown) {
         // takes in the selector for the dropdown
@@ -342,6 +326,7 @@ $(function() {
     included();
     totalPossibelPoints();
     totalSelectedPoints();
+    checkCharCount();
 
 });
 
