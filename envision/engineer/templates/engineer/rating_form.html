@@ -29,7 +29,7 @@
     </div>
 </head>
 <body>
-{#BELOW CHANGES BASED ON VERSION A/B#}
+{#BELOW CHANGES BASED ON VERSION 0/1#}
 <div class = "version-one south-box">
     <h4 id="title">An example project - South LA Wetlands</h4>
     <div>
@@ -37,7 +37,7 @@
         <p id="image-description">Here is an example project to help with your assessment. The South Los Angeles Wetland Park is a nature park and sustainable stormwater treatment wetland constructed on a former Brownfield site in Los Angeles, CA. Both the previous site and end result are similar to what is possible in Cordova, AL. Included below are examples to explain how the South LA team achieved a platinum rating.</p>
     </div>
 </div>
-{#ABOVE CHANGES BASED ON VERSION A/B#}
+{#ABOVE CHANGES BASED ON VERSION 0/1#}
 <form class="navbar-form navbar-center" method="POST" action="{% url 'engineer_detail' engineer.pk %}">
     {% csrf_token %}
     <div class = "headerbox">
@@ -282,8 +282,8 @@
                 <br>Establish sound and meaningful programs for stakeholder identification, engagement, and involvement in project decision making.<br>
                 <a href="#" target="_blank">detail/guidance</a>
             </p>
-            <h4 class="col-md-2"> {{ rating_form.LD1_2_inc }}</h4>
-            <h4 class="col-md-2"> {{ rating_form.LD1_2_loa }}</h4>
+            <h4 class="col-md-2"> {{ rating_form.LD1_4_inc }}</h4>
+            <h4 class="col-md-2"> {{ rating_form.LD1_4_loa }}</h4>
             <div class="col-md-1 col-md-offset-1 box-yellow">
                 <h4 class="selected-points" id="ld12-selected-points">0</h4>
             </div>
@@ -292,7 +292,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    {{ rating_form.LD1_2_exp |attr:"rows:4" }}
+                    {{ rating_form.LD1_4_exp |attr:"rows:4" }}
                     <br><span class="current-count" id="span-1">0</span>  /  <span class="required-count"> 0 </span>
                 </div>
             </div>
