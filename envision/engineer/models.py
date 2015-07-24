@@ -15,7 +15,7 @@ class Engineer(models.Model):
     version = models.IntegerField(null=True)
 
     def __str__(self):
-        return self.name
+        return "{}, version: {}".format(self.name, self.version)
 
     # total_time = models.IntegerField(default=0)
 

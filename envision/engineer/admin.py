@@ -7,7 +7,7 @@ class EngineerAdmin(admin.ModelAdmin):
 
 
 class RatingAdmin(admin.ModelAdmin):
-    list_display = ['engineer', 'version', 'total_time',
+    list_display = ['engineer', 'total_time',
             'QL1_1_inc', 'QL1_1_loa', 'QL1_1_exp',
             'QL1_2_inc', 'QL1_2_loa', 'QL1_2_exp',
             'QL2_3_inc', 'QL2_3_loa', 'QL2_3_exp',
