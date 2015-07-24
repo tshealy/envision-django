@@ -14,12 +14,23 @@ class Engineer(models.Model):
 
     version = models.IntegerField(null=True)
 
-    total_time = models.IntegerField(default=0)
+    def __str__(self):
+        return self.name
+
+    # total_time = models.IntegerField(default=0)
 
 
 class Rating(models.Model):
 
     engineer = models.ForeignKey(Engineer)
+
+    # def version(self):
+    #     self.engineer.version
+
+    total_time = models.IntegerField(default=0)
+
+    # def version(self):
+    #     self.engineer.version
 
     include = (
         (0, "Include"),

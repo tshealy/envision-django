@@ -1,4 +1,5 @@
 $(function() {
+    var startTime = $.now();
 
     var charCounts = {
         'No Added Value': 0,
@@ -9,6 +10,32 @@ $(function() {
         'Restorative': 300,
         'Exclude': 50,
     }
+
+    $(".submit").click(function(){
+        if(checkCharacterCount()) {
+            $("#id_total_time").val( Math.floor(($.now() - startTime) / 1000 ));
+            $("form").submit();
+        } else {
+            return false;
+        }
+    });
+
+    function checkCharacterCount() {
+        var errorCount = 0;
+        $.each($("textarea"), function(index, value){
+            var requiredCount = parseInt($(value).siblings('.required-count').text());
+            if ( $(value).val().length <= requiredCount && requiredCount !== 0 ){
+                errorCount++;
+                $(value).addClass('error');
+                console.log(errorCount);
+            } else {
+                $(value).removeClass('error');
+            }
+        });
+        return errorCount === 0;
+    };
+
+
     //character count for textarea
     $("textarea").keyup(function(){
         var text_and_span = $(this).siblings();
@@ -28,35 +55,6 @@ $(function() {
         }
         row.find(".required-count").text(charCounts[text]);
     });
-
-
-    function checkCharCount() {
-        if (currentCount() < requiredCount()) {
-            console.log("can't submit")
-    }
-    };
-
-    function currentCount() {
-         var textCount = $("textarea").keyup(function () {
-            var text_and_span = $(this).siblings();
-            var current_span = text_and_span.siblings('.current-count');
-            var textCount = current_span.text($(this).val().length);
-        });
-        return textCount
-    }
-
-    function requiredCount() {
-        var requiredCount = $("select").change(function(){
-            var row = $(this).parent().siblings(".row");
-
-            var text = $(this).children(':selected').text();
-            if (text === "Include") {
-                text = $(this).parent().siblings("h4").find("select").children(':selected').text()
-            }
-            row.find(".required-count").text(charCounts[text]);
-    });
-        return requiredCount
-    }
 
     function getLastValue(dropdown) {
         // takes in the selector for the dropdown
@@ -320,13 +318,27 @@ $(function() {
     };
 
 
+    $("#id_total_time").hide();
+
     //characterCounts();
     possiblePoints();
     selectedPoints();
     included();
     totalPossibelPoints();
     totalSelectedPoints();
-    checkCharCount();
 
 });
+
+
+    //$('#happy-form').isHappy({
+    //    fields: {
+    //        // reference the field you're talking about, probably by `id`
+    //        // but you could certainly do $('[name=name]') as well.
+    //        '#id_QL1_1_exp': {
+    //            required: true,
+    //            message: 'Might we inquire your name'
+    //        }
+    //    }
+    //});
+
 

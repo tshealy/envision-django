@@ -23,7 +23,7 @@ class RatingForm(forms.ModelForm):
 
     class Meta:
         model = Rating
-        fields = ['QL1_1_inc', 'QL1_1_loa', 'QL1_1_exp',
+        fields = ['total_time', 'QL1_1_inc', 'QL1_1_loa', 'QL1_1_exp',
               'QL1_2_inc', 'QL1_2_loa', 'QL1_2_exp',
               'QL2_3_inc', 'QL2_3_loa', 'QL2_3_exp',
               'QL2_5_inc', 'QL2_5_loa', 'QL2_5_exp',

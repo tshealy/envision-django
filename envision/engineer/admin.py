@@ -7,7 +7,7 @@ class EngineerAdmin(admin.ModelAdmin):
 
 
 class RatingAdmin(admin.ModelAdmin):
-    list_display = ['engineer',
+    list_display = ['engineer', 'version', 'total_time',
             'QL1_1_inc', 'QL1_1_loa', 'QL1_1_exp',
             'QL1_2_inc', 'QL1_2_loa', 'QL1_2_exp',
             'QL2_3_inc', 'QL2_3_loa', 'QL2_3_exp',
@@ -20,6 +20,8 @@ class RatingAdmin(admin.ModelAdmin):
             'NW1_2_inc', 'NW1_2_loa', 'NW1_2_exp',
             'NW2_2_inc', 'NW2_2_loa', 'NW2_2_exp',
             'NW2_3_inc', 'NW2_3_loa', 'NW2_3_exp',]
+
+    list_filter = ['engineer']
 
 
 admin.site.register(Engineer, EngineerAdmin)
