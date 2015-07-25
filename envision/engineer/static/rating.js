@@ -163,6 +163,7 @@ $(function() {
         });
          $("#id_QL1_2_inc").change(function(){
            if ($("#id_QL1_2_inc :selected").val() == 1) {
+               $("#id_QL1_2_loa").val(0);
                $("#id_QL1_2_loa").prop("disabled", true);
                writePossiblePoints( $("#ql12-selected-points"), 0 );
                writePossiblePoints( $("#ql12-possible-points"), 0 );
@@ -174,6 +175,7 @@ $(function() {
         });
          $("#id_QL2_3_inc").change(function(){
            if ($("#id_QL2_3_inc :selected").val() == 1) {
+               $("#id_QL2_3_loa").val(0);
                $("#id_QL2_3_loa").prop("disabled", true);
                writePossiblePoints( $("#ql23-selected-points"), 0 );
                writePossiblePoints( $("#ql23-possible-points"), 0 );
@@ -185,6 +187,7 @@ $(function() {
         });
          $("#id_QL2_5_inc").change(function(){
            if ($("#id_QL2_5_inc :selected").val() == 1) {
+               $("#id_QL2_5_loa").val(0);
                $("#id_QL2_5_loa").prop("disabled", true);
                writePossiblePoints( $("#ql25-selected-points"), 0 );
                writePossiblePoints( $("#ql25-possible-points"), 0 );
@@ -196,6 +199,7 @@ $(function() {
         });
          $("#id_QL2_6_inc").change(function(){
            if ($("#id_QL2_6_inc :selected").val() == 1) {
+               $("#id_QL2_6_loa").val(0);
                $("#id_QL2_6_loa").prop("disabled", true);
                writePossiblePoints( $("#ql26-selected-points"), 0 );
                writePossiblePoints( $("#ql26-possible-points"), 0 );
@@ -207,6 +211,7 @@ $(function() {
         });
          $("#id_LD1_2_inc").change(function(){
            if ($("#id_LD1_2_inc :selected").val() == 1) {
+               $("#id_LD1_2_loa").val(0);
                $("#id_LD1_2_loa").prop("disabled", true);
                writePossiblePoints( $("#ld12-selected-points"), 0 );
                writePossiblePoints( $("#ld12-possible-points"), 0 );
@@ -218,6 +223,7 @@ $(function() {
         });
          $("#id_LD1_4_inc").change(function(){
            if ($("#id_LD1_4_inc :selected").val() == 1) {
+               $("#id_LD1_4_loa").val(0);
                $("#id_LD1_4_loa").prop("disabled", true);
                writePossiblePoints( $("#ld14-selected-points"), 0 );
                writePossiblePoints( $("#ld14-possible-points"), 0 );
@@ -229,6 +235,7 @@ $(function() {
         });
          $("#id_LD2_2_inc").change(function(){
            if ($("#id_LD2_2_inc :selected").val() == 1) {
+               $("#id_LD2_2_loa").val(0);
                $("#id_LD2_2_loa").prop("disabled", true);
                writePossiblePoints( $("#ld22-selected-points"), 0 );
                writePossiblePoints( $("#ld22-possible-points"), 0 );
@@ -240,6 +247,7 @@ $(function() {
         });
          $("#id_NW1_2_inc").change(function(){
            if ($("#id_NW1_2_inc :selected").val() == 1) {
+               $("#id_NW1_2_loa").val(0);
                $("#id_NW1_2_loa").prop("disabled", true);
                writePossiblePoints( $("#nw12-selected-points"), 0 );
                writePossiblePoints( $("#nw12-possible-points"), 0 );
@@ -251,6 +259,7 @@ $(function() {
         });
          $("#id_NW2_2_inc").change(function(){
            if ($("#id_NW2_2_inc :selected").val() == 1) {
+               $("#id_NW2_2_loa").val(0);
                $("#id_NW2_2_loa").prop("disabled", true);
                writePossiblePoints( $("#nw22-selected-points"), 0 );
                writePossiblePoints( $("#nw22-possible-points"), 0 );
@@ -262,6 +271,7 @@ $(function() {
         });
          $("#id_NW2_3_inc").change(function(){
            if ($("#id_NW2_3_inc :selected").val() == 1) {
+               $("#id_NW2_3_loa").val(0);
                $("#id_NW2_3_loa").prop("disabled", true);
                writePossiblePoints( $("#nw23-selected-points"), 0 );
                writePossiblePoints( $("#nw23-possible-points"), 0 );
@@ -273,6 +283,7 @@ $(function() {
         });
          $("#id_QL3_3_inc").change(function(){
            if ($("#id_QL3_3_inc :selected").val() == 1) {
+               $("#id_QL3_3_loa").val(0);
                $("#id_QL3_3_loa").prop("disabled", true);
                writePossiblePoints( $("#ql33-selected-points"), 0 );
                writePossiblePoints( $("#ql33-possible-points"), 0 );
