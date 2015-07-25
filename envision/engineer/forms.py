@@ -13,28 +13,22 @@ class EngineerForm(forms.ModelForm):
         fields = ('name', 'version',)
 
 
-# class ProjectForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Project
-
-
 class RatingForm(forms.ModelForm):
 
     class Meta:
         model = Rating
         fields = ['total_time',
-            'QL1_1_inc', 'QL1_1_loa', 'QL1_1_exp',
             'QL1_2_inc', 'QL1_2_loa', 'QL1_2_exp',
+            'QL1_3_inc', 'QL1_3_loa', 'QL1_3_exp',
             'QL2_3_inc', 'QL2_3_loa', 'QL2_3_exp',
-            'QL2_5_inc', 'QL2_5_loa', 'QL2_5_exp',
-            'QL2_6_inc', 'QL2_6_loa', 'QL2_6_exp',
+            'QL3_2_inc', 'QL3_2_loa', 'QL3_2_exp',
             'QL3_3_inc', 'QL3_3_loa', 'QL3_3_exp',
-            'LD1_2_inc', 'LD1_2_loa', 'LD1_2_exp',
-            'LD1_4_inc', 'LD1_4_loa', 'LD1_4_exp',
-            'LD2_2_inc', 'LD2_2_loa', 'LD2_2_exp',
             'NW1_2_inc', 'NW1_2_loa', 'NW1_2_exp',
-            'NW2_2_inc', 'NW2_2_loa', 'NW2_2_exp',
-            'NW2_3_inc', 'NW2_3_loa', 'NW2_3_exp',]
+            'NW1_5_inc', 'NW1_5_loa', 'NW1_5_exp',
+            'NW2_1_inc', 'NW2_1_loa', 'NW2_1_exp',
+            'NW2_3_inc', 'NW2_3_loa', 'NW2_3_exp',
+            'NW3_4_inc', 'NW3_4_loa', 'NW3_4_exp',
+            'CR1_1_inc', 'CR1_1_loa', 'CR1_1_exp',
+            'CR2_2_inc', 'CR2_2_loa', 'CR2_2_exp',]
 
 
