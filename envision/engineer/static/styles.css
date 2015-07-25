@@ -6,6 +6,10 @@
     margin-bottom: 5em;
 }
 
+#textarea{
+    width: 20em;
+}
+
 .standout{
     color: black;
 }
