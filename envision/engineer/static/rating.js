@@ -331,7 +331,7 @@ $(function() {
 
     $("#id_total_time").hide();
 
-    
+
     possiblePoints();
     selectedPoints();
     included();

@@ -6,10 +6,6 @@
     margin-bottom: 5em;
 }
 
-#textarea{
-    width: 20em;
-}
-
 .standout{
     color: black;
 }
@@ -114,7 +110,7 @@ img {
     border-radius: 3px;
     border-style: solid;
     border-width: 1px;
-    border-color: dodgerblue;
+    border-color: cadetblue;
     background-color: white;
 }
 .textbox {
@@ -166,11 +162,11 @@ img {
 }
 .climate {
     height: 4em;
-    background-color: dodgerblue;
+    background-color: cadetblue;
     border-radius: 3px;
 }
 .cr {
-    color: dodgerblue;
+    color: cadetblue;
 }
 .natural-world {
     height: 4em;
@@ -179,6 +175,7 @@ img {
 }
 .nw {
     color: darkolivegreen;
+    font-size: 1.2em;
 }
 
 .credits-ql {
@@ -206,7 +203,9 @@ img {
     box-shadow: 2px 2px 2px red;
 
 }
-
+textarea {
+    width: 100%;
+}
 
 /*textarea {*/
     /*width: 50px;*/
