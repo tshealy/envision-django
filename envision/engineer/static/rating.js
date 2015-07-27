@@ -16,7 +16,7 @@ $(function() {
             $("#id_total_time").val( Math.floor(($.now() - startTime) / 1000 ));
             console.log('records time');
             $("form").submit();
-            console.log('submit')
+            //console.log('submit');
         } else {
             return false;
         }
@@ -155,11 +155,11 @@ $(function() {
         $("#id_QL1_2_inc").change(function(){
            if ($("#id_QL1_2_inc :selected").val() == 1) {
                $("#id_QL1_2_loa").val(0);
-               $("#id_QL1_2_loa").prop("disabled", true);
+               $("#id_QL1_2_loa").hide();
                writePossiblePoints( $("#ql12-selected-points"), 0 );
                writePossiblePoints( $("#ql12-possible-points"), 0 );
            } else {
-               $("#id_QL1_2_loa").prop("disabled", false);
+               $("#id_QL1_2_loa").show();
                writePossiblePoints( $("#ql12-possible-points"), getLastValue($("#id_QL1_2_loa")) );
                $("#ql12-selected-points").text($("#id_QL1_2_loa :selected").val());
            };
