@@ -10,11 +10,13 @@ $(function() {
         'Restorative': 300,
         'Exclude': 70,
     };
-
+    //current
     $(".submit").click(function(){
-        if(checkCharacterCount()) {
+        if(checkCharacterCount() ){
             $("#id_total_time").val( Math.floor(($.now() - startTime) / 1000 ));
+            console.log('records time');
             $("form").submit();
+            console.log('submit')
         } else {
             return false;
         }
@@ -24,17 +26,18 @@ $(function() {
         var errorCount = 0;
         $.each($("textarea"), function(index, value){
             var requiredCount = parseInt($(value).siblings('.required-count').text());
-            if ( $(value).val().length <= requiredCount && requiredCount !== 0 ){
+            if ( $(value).val().length < requiredCount && requiredCount !== 0 ){
                 errorCount++;
                 $(value).addClass('error');
                 console.log(errorCount);
             } else {
                 $(value).removeClass('error');
-                console.log(value);
+                console.log("no error")
             }
         });
+        return errorCount === 0;
     };
-
+    //current
 
     //character count for textarea
     $("textarea").keyup(function(){
