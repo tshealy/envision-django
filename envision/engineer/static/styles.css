@@ -146,6 +146,7 @@ img {
 }
 .ql {
     color: rgba(229, 103, 23, 0.8);
+    padding-left: 0.5em;
 }
 
 .category-title {
@@ -167,6 +168,7 @@ img {
 }
 .cr {
     color: cadetblue;
+    padding-left: 0.5em;
 }
 .natural-world {
     height: 4em;
@@ -175,7 +177,7 @@ img {
 }
 .nw {
     color: darkolivegreen;
-    font-size: 1.2em;
+    padding-left: 0.5em;
 }
 
 .credits-ql {
